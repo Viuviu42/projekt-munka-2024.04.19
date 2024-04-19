@@ -27,3 +27,9 @@ for row in file:
 
 if count == len(kimi):
     print("3. feladat: ",len(kimi)) 
+
+print("4. feladat: Magyar Nagydíj helyezései")
+for i in kimi:
+    if i.bigp == "Magyar Nagydíj":
+        if i.placement != "":
+            print(f"{i.date} : {i.placement} hely")
