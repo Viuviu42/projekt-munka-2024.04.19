@@ -45,8 +45,25 @@ for i in kimi:
             stat[i.error] += 1
         else:
             stat[i.error] = 1
+
  
 print("5. feladat: Hibastatisztika")
 for k,t in stat.items():
     if t > 1:
         print("\t", k, ":", t)
+
+file.close()
+print("8.feladat")
+
+html = open("kimi.html","wt", encoding="utf-8")
+html.write("doctype html")
+html.write("<html>")
+html.write("<head></head>")
+html.write("<h1>Kimi Räikkönen</h1>")
+html.write("<table>")
+for i in kimi:
+    html.write(f"<tr><td>{i.date}</td><td>{i.bigp}</td><td>{i.placement}</td></tr>")
+html.write("</table>")
+html.write("</body>")
+html.write("</html>")
+html.close()
